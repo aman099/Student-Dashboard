@@ -19,63 +19,63 @@ document.addEventListener("DOMContentLoaded", function () {
 	//   Sidebar menu reveal
 	const revealerMenus = document.querySelectorAll(".revealer");
 
-	revealerMenus.forEach((revealerMenu) => {
-		revealerMenu.addEventListener("click", function (e) {
-			// if (e.target !== this) return;
-
-			//  For multiple elements clicks single time
-			if (
-				document.querySelector(".revealer.active") &&
-				document.querySelector(".revealer.active") !== revealerMenu
-			) {
-				document.querySelector(".revealer.active")?.classList.toggle("active");
-			}
-
-			//   For individual click on menu twice
-			revealerMenu.classList.toggle("active");
-			if (revealerMenu.classList.contains("active")) {
-				revealerMenu.classList.add("active");
-			} else {
-				revealerMenu.classList.remove("active");
-			}
-		});
-	});
-
-	// const dropInstigaters = document.querySelectorAll(".drop-instigater");
-	// console.log(dropInstigaters);
-
-	// dropInstigaters.forEach((dropInstigater) => {
-	// 	dropInstigater.addEventListener("click", function (e) {
-	// 		console.log("TARGET", e.target);
-	// 		console.log("CURRENT TARGET", e.target);
-
-	// 		if (e.target !== e.currentTarget) return;
+	// revealerMenus.forEach((revealerMenu) => {
+	// 	revealerMenu.addEventListener("click", function (e) {
+	// 		// if (e.target !== this) return;
 
 	// 		//  For multiple elements clicks single time
 	// 		if (
-	// 			document.querySelector(".drop-instigater.active") &&
-	// 			document.querySelector(".drop-instigater.active") !== dropInstigater
+	// 			document.querySelector(".revealer.active") &&
+	// 			document.querySelector(".revealer.active") !== revealerMenu
 	// 		) {
-	// 			document
-	// 				.querySelector(".drop-instigater.active")
-	// 				?.classList.toggle("active");
 	// 			document.querySelector(".revealer.active")?.classList.toggle("active");
 	// 		}
 
 	// 		//   For individual click on menu twice
-
-	// 		dropInstigater.classList.toggle("active");
-	// 		if (dropInstigater.classList.contains("active")) {
-	// 			dropInstigater.parentElement.classList.remove("transition");
-	// 			dropInstigater.parentElement.classList.add("active");
-	// 			dropInstigater.classList.add("active");
+	// 		revealerMenu.classList.toggle("active");
+	// 		if (revealerMenu.classList.contains("active")) {
+	// 			revealerMenu.classList.add("active");
 	// 		} else {
-	// 			dropInstigater.parentElement.classList.add("transition");
-	// 			dropInstigater.parentElement.classList.remove("active");
-	// 			dropInstigater.classList.remove("active");
+	// 			revealerMenu.classList.remove("active");
 	// 		}
 	// 	});
 	// });
+
+	const dropInstigaters = document.querySelectorAll(".drop-instigater");
+	console.log(dropInstigaters);
+
+	dropInstigaters.forEach((dropInstigater) => {
+		dropInstigater.addEventListener("click", function (e) {
+			console.log("TARGET", e.target);
+			console.log("CURRENT TARGET", e.target);
+
+			// if (e.target !== e.currentTarget) return;
+
+			//  For multiple elements clicks single time
+			if (
+				document.querySelector(".drop-instigater.active") &&
+				document.querySelector(".drop-instigater.active") !== dropInstigater
+			) {
+				document
+					.querySelector(".drop-instigater.active")
+					?.classList.toggle("active");
+				// document.querySelector(".revealer.active")?.classList.toggle("active");
+			}
+
+			//   For individual click on menu twice
+
+			dropInstigater.classList.toggle("active");
+			if (dropInstigater.classList.contains("active")) {
+				// dropInstigater.parentElement.classList.remove("transition");
+				// dropInstigater.parentElement.classList.add("active");
+				dropInstigater.classList.add("active");
+			} else {
+				// dropInstigater.parentElement.classList.add("transition");
+				// dropInstigater.parentElement.classList.remove("active");
+				dropInstigater.classList.remove("active");
+			}
+		});
+	});
 
 	const nav1Dropdown = document.querySelector(
 		"nav ul li:nth-child(1) details.dropdown"
@@ -128,27 +128,27 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	//
-	const mainList = document.querySelectorAll("aside#sidebar nav ul li");
+	// const mainList = document.querySelectorAll("aside#sidebar nav ul li");
 
-	mainList.forEach((mainLi) => {
-		mainLi.addEventListener("click", () => {
-			if (
-				document.querySelector("aside#sidebar nav ul li.active") &&
-				document.querySelector("aside#sidebar nav ul li.active") !== mainLi
-			) {
-				document
-					.querySelector("aside#sidebar nav ul li.active")
-					?.classList.toggle("active");
-			}
+	// mainList.forEach((mainLi) => {
+	// 	mainLi.addEventListener("click", () => {
+	// 		if (
+	// 			document.querySelector("aside#sidebar nav ul li.active") &&
+	// 			document.querySelector("aside#sidebar nav ul li.active") !== mainLi
+	// 		) {
+	// 			document
+	// 				.querySelector("aside#sidebar nav ul li.active")
+	// 				?.classList.toggle("active");
+	// 		}
 
-			mainLi.classList.toggle("active");
-			if (mainLi.classList.contains("active")) {
-				mainLi.classList.add("active");
-			} else {
-				mainLi.classList.remove("active");
-			}
-		});
-	});
+	// 		mainLi.classList.toggle("active");
+	// 		if (mainLi.classList.contains("active")) {
+	// 			mainLi.classList.add("active");
+	// 		} else {
+	// 			mainLi.classList.remove("active");
+	// 		}
+	// 	});
+	// });
 
 	// ChartJS Library
 	const data = {
