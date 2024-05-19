@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <!--  -->
+    <!-- Font-Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--  -->
+    <!-- Pari CSS -->
+    <link rel="stylesheet" href="./beauty/pari.css" />
+    <link rel="stylesheet" href="./beauty/components/navbar-pari.css" />
+    <link rel="stylesheet" href="./beauty/layout/container.css" />
+    <link rel="stylesheet" href="./beauty/helpers/flexbox.css" />
+    <link rel="stylesheet" href="./beauty/elements/button-pari.css" />
+    <!--  -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Chart-JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <!--  -->
+    <script src="./app.js" defer></script>
+    <title>Student Dashboard</title>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <!-- Navbar -->
+    <div class="navbar-container container is-fullhd">
+        <nav id="nav" class="container is-fullhd">
+            <header>
+                <div class="hamburger-icon-container">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <img class="main-logo-img" src="./assets/logo.png" />
+                <img class="backup-img" src="./assets/logo-small.png" alt="Logo small" />
+                <div class="left-nav display-flex-2x2-wrap is-align-items-center">
+                    <span class="bars"><i class="fa-solid fa-bars"></i></span>
+                    <div class="input-cont">
+                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" placeholder="Search.." />
+                    </div>
+                </div>
+            </header>
+            <!-- <input type="checkbox" id="nav-check" /> -->
+            <!-- <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div> -->
+            <ul>
+                <!-- <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Products</a></li> -->
+                <li>
+                    <details class="dropdown">
+                        <summary>
+                            <img src="./assets/icons/flags/flags/in.png" alt="Indian flag" />
+                        </summary>
+                        <ul role="nav-drop">
+                            <li>
+                                <img src="./assets/icons/flags/flags/in.png" alt="Indian flag" />
+                                <a href="#">Indian</a>
+                            </li>
+                            <li>
+                                <img src="./assets/icons/flags/flags/fr.png" alt="France flag" /><a href="#">Frances</a>
+                            </li>
+                            <li>
+                                <img src="./assets/icons/flags/flags/ar.png" alt="Argentina flag" /><a
+                                    href="#">Argentina</a>
+                            </li>
+                            <li>
+                                <img src="./assets/icons/flags/flags/us.png" alt="America flag" /><a href="#">U.S.A</a>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details class="dropdown">
+                        <summary><i class="fa-regular fa-bell"></i></summary>
+                        <ul role="nav-drop">
+                            <div class="nav-drop-heading">
+                                <h2>Notifications</h2>
+                                <p>clear all</p>
+                            </div>
+                            <li>
+                                <div class="pro-img">
+                                    <img src="./assets/profiles/avatar-05.jpg" alt="" />
+                                </div>
+                                <div class="pro-details">
+                                    <p>
+                                        <span>priyanshi</span> has approved
+                                        <span>your estimate</span>
+                                    </p>
+                                    <p>4 mins ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pro-img">
+                                    <img src="./assets/profiles/avatar-02.jpg" alt="" />
+                                </div>
+                                <div class="pro-details">
+                                    <p>
+                                        <span>International Software Inc</span> has sent you a
+                                        invoice in the amount of
+                                        <span>$4</span>
+                                    </p>
+                                    <p>6 mins ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pro-img">
+                                    <img src="./assets/profiles/avatar-04.jpg" alt="" />
+                                </div>
+                                <div class="pro-details">
+                                    <p>
+                                        <span>John Hendry</span> sent a cancellation request
+                                        <span>Apple iPhone XR</span>
+                                    </p>
+                                    <p>8 mins ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pro-img">
+                                    <img src="./assets/profiles/avatar-06.jpg" alt="" />
+                                </div>
+                                <div class="pro-details">
+                                    <p>
+                                        <span>Mercury Software Inc</span> added a new product
+                                        <span>Apple MacBook Pro</span>
+                                    </p>
+                                    <p>12 mins ago</p>
+                                </div>
+                            </li>
+                            <li class="clear-msg">
+                                <p>All Notifications cleared</p>
+                            </li>
+                            <div class="nav-drop-heading nav-drop-heading-2">
+                                <h2>View all notifications</h2>
+                            </div>
+                        </ul>
+                    </details>
+                </li>
+                <!--  -->
+                <li class="main-pro">
+                    <details class="dropdown">
+                        <summary>
+                            <div class="main-profile display-flex-2x2-wrap is-align-items-flex-start">
+                                <div class="main-pro-img">
+                                    <img src="./assets/profiles/avatar-01.jpg" alt="Main Profile image" />
+                                </div>
+                                <div class="main-pro-right">
+                                    <h5>Rahul Raj</h5>
+                                    <p>Administrator</p>
+                                </div>
+                                <div class="chevron-arr">
+                                    <span><i class="fa-solid fa-chevron-down"></i></span>
+                                </div>
+                            </div>
+                            <div class="substitute-pro-img-cont">
+                                <img class="subs-pro-img" src="./assets/profiles/avatar-01.jpg"
+                                    alt="Main Profile image" />
+                            </div>
+                        </summary>
+                        <ul role="nav-drop">
+                            <li>
+                                <div class="main-profile main-profile-2">
+                                    <div class="main-pro-img">
+                                        <img src="./assets/profiles/avatar-01.jpg" alt="Main Profile image" />
+                                    </div>
+                                    <div class="main-pro-right">
+                                        <h5>Rahul Raj</h5>
+                                        <p>Administrator</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="#">My Profile</a></li>
+                            <li><a href="#">Inbox</a></li>
+                            <li><a href="#">Log out</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <!--  -->
+            </ul>
+        </nav>
+    </div>
+
+    <!--  -->
+
+    <!-- Sidebar -->
+    <div class="sidebar-container container is-fullhd display-flex-2x2-wrap">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <nav>
+                <h5>Main Menu</h5>
+                <ul>
+                    <div class="revealer">
+                        <li class="drop-instigater">
+                            <div class="menus-cont">
+                                <span><i class="fa-solid fa-gauge"></i></span>
+                                <a href="#">Dashboard</a>
+                            </div>
+                            <span class="chevron-ri8"><i class="fa-solid fa-chevron-right"></i></span>
+                        </li>
+                        <ul class="reveal reveal-1">
+                            <li>Admin Dashboard</li>
+                            <li>Teacher Dashboard</li>
+                            <li>Student Dashboard</li>
+                        </ul>
+                    </div>
+                    <div class="revealer">
+                        <li class="drop-instigater">
+                            <div class="menus-cont">
+                                <span><i class="fa-solid fa-graduation-cap"></i></span>
+                                <a href="#">Students</a>
+                            </div>
+                            <span class="chevron-ri8"><i class="fa-solid fa-chevron-right"></i></span>
+                        </li>
+                        <ul class="reveal reveal-2">
+                            <li>Student List</li>
+                            <li>Student View</li>
+                            <li>Student Add</li>
+                            <li>Student Edit</li>
+                        </ul>
+                    </div>
+                    <div class="revealer">
+                        <li class="drop-instigater">
+                            <div class="menus-cont">
+                                <span><i class="fa-solid fa-chalkboard-user"></i></span>
+                                <a href="#">Teachers</a>
+                            </div>
+                            <span class="chevron-ri8"><i class="fa-solid fa-chevron-right"></i></span>
+                        </li>
+                        <ul class="reveal reveal-3">
+                            <li>Teacher List</li>
+                            <li>Teacher View</li>
+                            <li>Teacher Add</li>
+                            <li>Teacher Edit</li>
+                        </ul>
+                    </div>
+                    <div class="revealer">
+                        <li class="drop-instigater">
+                            <div class="menus-cont">
+                                <span><i class="fa-solid fa-building"></i></span>
+                                <a href="#">Departments</a>
+                            </div>
+                            <span class="chevron-ri8"><i class="fa-solid fa-chevron-right"></i></span>
+                        </li>
+                        <ul class="reveal reveal-4">
+                            <li>Department List</li>
+                            <li>Department Add</li>
+                            <li>Department Edit</li>
+                        </ul>
+                    </div>
+                    <div class="revealer">
+                        <li class="drop-instigater">
+                            <div class="menus-cont">
+                                <span><i class="fa-solid fa-book-open-reader"></i></span>
+                                <a href="#">Subjects</a>
+                            </div>
+                            <span class="chevron-ri8"><i class="fa-solid fa-chevron-right"></i></span>
+                        </li>
+                        <ul class="reveal reveal-5">
+                            <li>Subject List</li>
+                            <li>Subject Add</li>
+                            <li>Subject Edit</li>
+                        </ul>
+                    </div>
+                    <div class="revealer">
+                        <li class="drop-instigater">
+                            <div class="menus-cont">
+                                <span><i class="fa-solid fa-clipboard"></i></span>
+                                <a href="#">Invoices</a>
+                            </div>
+                            <span class="chevron-ri8"><i class="fa-solid fa-chevron-right"></i></span>
+                        </li>
+                        <ul class="reveal reveal-6">
+                            <li>Invoices List</li>
+                            <li>Invoices Grid</li>
+                            <li>Add Invoices</li>
+                            <li>Edit Invoices</li>
+                            <li>Invoices Details</li>
+                        </ul>
+                    </div>
+                </ul>
+                <h5>Management</h5>
+                <ul>
+                    <div class="revealer">
+                        <li class="drop-instigater">
+                            <div class="menus-cont">
+                                <span><i class="fa-solid fa-file-invoice"></i></span>
+                                <a href="#">Accounts</a>
+                            </div>
+                            <span class="chevron-ri8"><i class="fa-solid fa-chevron-right"></i></span>
+                        </li>
+                        <ul class="reveal">
+                            <li>Fees Collection</li>
+                            <li>Expenses</li>
+                            <li>Salary</li>
+                        </ul>
+                    </div>
+                    <li>
+                        <div class="menus-cont">
+                            <span><i class="fa-solid fa-gift"></i></span>
+                            <a href="#">Holiday</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menus-cont">
+                            <span><i class="fa-solid fa-money-bill-wave"></i></span>
+                            <a href="#">Fees</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- <div class="toggle-sidebar-btn">&#9776;</div> -->
+        <!-- Hero section -->
+        <main id="main" class="">
+            <div
+                class="heading-container display-flex-2x2-wrap is-justify-content-space-between is-align-items-flex-end">
+                <h4>Welcome Karan</h4>
+                <p class=""><span>Home</span> / Student</p>
+            </div>
+            <div class="projects">
+                <div class="projects-container">
+                    <div class="project project-1">
+                        <div class="project-info">
+                            <p>All Courses</p>
+                            <h5>04/06</h5>
+                        </div>
+                        <div class="project-img">
+                            <img src="./assets/main-imgs/Courses.svg" alt="Courses">
+                        </div>
+                    </div>
+                    <div class="project project-2">
+                        <div class="project-info">
+                            <p>All Courses</p>
+                            <h5>40/60</h5>
+                        </div>
+                        <div class="project-img">
+                            <img src="./assets/main-imgs/Projects.svg" alt="Courses">
+                        </div>
+                    </div>
+                    <div class="project project-3">
+                        <div class="project-info">
+                            <p>Test Attended</p>
+                            <h5>30/50</h5>
+                        </div>
+                        <div class="project-img">
+                            <img src="./assets/main-imgs/Tests-attended.svg" alt="Courses">
+                        </div>
+                    </div>
+                    <div class="project project-4">
+                        <div class="project-info">
+                            <p>Test Passed</p>
+                            <h5>15/20</h5>
+                        </div>
+                        <div class="project-img">
+                            <img src="./assets/main-imgs/Tests-passed.svg" alt="Courses">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="student-grid">
+                <div class="student-grid-container">
+                    <div class="student-grid-item student-grid-item-1">
+                        <div class="student-gi-heading">
+                            <div class="heading-left">
+                                <h4>Today's Lesson</h4>
+                            </div>
+                            <div class="heading-right">
+                                <div class="dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="view-all">
+                                    <span>View All</span>
+                                </div>
+                                <div class="menu-dots">
+                                    <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="student-gi-1-content">
+                            <div class="student-progress">
+                                <h3>80%</h3>
+                            </div>
+                            <div class="student-batch-det-1">
+                                <div class="middle-content">
+                                    <div class="icon"><span><i class="fa-solid fa-tv"></i></span></div>
+                                    <div class="infos">
+                                        <p class="info-title">Class</p>
+                                        <p>Electrical Engg</p>
+                                    </div>
+                                </div>
+                                <div class="middle-content">
+                                    <div class="icon"><span><i class="fa-solid fa-book-open"></i></span></div>
+                                    <div class="infos">
+                                        <p class="info-title">Lessons</p>
+                                        <p>5 Lessons</p>
+                                    </div>
+                                </div>
+                                <div class="middle-content">
+                                    <div class="icon"><span><i class="fa-regular fa-clock"></i></span></div>
+                                    <div class="infos">
+                                        <p class="info-title">Time</p>
+                                        <p>Lessons</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="student-batch-det-2">
+                                <div class="middle-content">
+                                    <div class="icon"><span><i class="fa-regular fa-clipboard"></i></span></div>
+                                    <div class="infos">
+                                        <p class="info-title">Assignment</p>
+                                        <p>5 Assignments</p>
+                                    </div>
+                                </div>
+                                <div class="middle-content">
+                                    <div class="icon"><span><i class="fa-regular fa-user"></i></span></div>
+                                    <div class="infos">
+                                        <p class="info-title">Staff</p>
+                                        <p>Dhyanendra</p>
+                                    </div>
+                                </div>
+                                <div class="middle-content">
+                                    <div class="icon"><span><i class="fa-solid fa-book"></i></span></div>
+                                    <div class="infos">
+                                        <p class="info-title">Lesson Learned</p>
+                                        <p>10/50</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="student-btns">
+                                <div class="student-btn student-btn-1">
+                                    <button class="primary-btn">Skip</button>
+                                </div>
+                                <div class="student-btn student-btn-2">
+                                    <button class="primary-btn">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="student-grid-item student-grid-item-2">
+                        <div class="student-gi-heading">
+                            <div class="heading-left">
+                                <h4>Learning Activity</h4>
+                            </div>
+                            <div class="heading-right">
+                                <div class="dots">
+                                    <span class="span-grid-2-dot-1"></span>
+                                    <p class="span-grid-2-profession">Teacher</p>
+                                </div>
+                                <div class="view-all">
+                                    <span class="span-grid-2-dot-2"></span>
+                                    <p class="span-grid-2-profession">Student</p>
+                                </div>
+                                <div class="menu-dots">
+                                    <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="student-gi-1-content student-gi-2-content">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="student-grid-item student-grid-item-3">
+                        <div class="student-gi-heading">
+                            <div class="heading-left">
+                                <h4>Teaching History</h4>
+                            </div>
+                            <div class="heading-right">
+                                <div class="menu-dots">
+                                    <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="student-gi-3-content">
+                            <div class="student-gi-3-content-container">
+                                <div class="dates-left">
+                                    <span>Sep22</span>
+                                </div>
+                                <div class="subs-middle">
+                                    <div class="subname">Mathematics</div>
+                                    <div class="sub-timeline">
+                                        <div class="sub-timeline-left">
+                                            <span><i class="fa-regular fa-calendar"></i></span> September 5, 2022
+                                        </div>
+                                        <div class="sub-timeline-right">
+                                            <span><i class="fa-regular fa-clock"></i></span> 09:00am - 10:am (60
+                                            Minutes)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subs-status-right">
+                                    <button class="primary-btn">In Progress</button>
+                                </div>
+                            </div>
+                            <div class="student-gi-3-content-container">
+                                <div class="dates-left">
+                                    <span>Sep23</span>
+                                </div>
+                                <div class="subs-middle">
+                                    <div class="subname">Geography</div>
+                                    <div class="sub-timeline">
+                                        <div class="sub-timeline-left">
+                                            <span><i class="fa-regular fa-calendar"></i></span> September 5, 2022
+                                        </div>
+                                        <div class="sub-timeline-right">
+                                            <span><i class="fa-regular fa-clock"></i></span> 09:00am - 10:am (60
+                                            Minutes)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subs-status-right">
+                                    <button class="primary-btn">Completed</button>
+                                </div>
+                            </div>
+                            <div class="student-gi-3-content-container">
+                                <div class="dates-left no-abs">
+                                    <span>Sep24</span>
+                                </div>
+                                <div class="subs-middle">
+                                    <div class="subname">Botony</div>
+                                    <div class="sub-timeline">
+                                        <div class="sub-timeline-left">
+                                            <span><i class="fa-regular fa-calendar"></i></span> September 5, 2022
+                                        </div>
+                                        <div class="sub-timeline-right">
+                                            <span><i class="fa-regular fa-clock"></i></span> 09:00am - 10:am (60
+                                            Minutes)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subs-status-right">
+                                    <button class="primary-btn">In Progress</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="student-grid-item student-grid-item-4">
+                        <div class="student-gi-heading">
+                            <div class="heading-left">
+                                <h4>Upcoming Events</h4>
+                            </div>
+                            <div class="heading-right">
+                                <div class="menu-dots">
+                                    <span><i class="fa-solid fa-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="month-heading">
+                            <p>10 Jan</p>
+                            <span><i class="fa-solid fa-ellipsis"></i></span>
+                        </div>
+                        <div class="events-container">
+                            <div class="events-left-congregate">
+                                <div class="event-time-left">
+                                    <span>08:00 am</span>
+                                </div>
+                                <div class="event-sub-middle">
+                                    <p>Botony</p>
+                                    <p>Lorem ipsum dolor sit</p>
+                                </div>
+                            </div>
+                            <div class="event-timings">
+                                <span>08:00 - 09:00 am</span>
+                            </div>
+                        </div>
+                        <div class="events-container">
+                            <div class="events-left-congregate">
+                                <div class="event-time-left">
+                                    <span>09:00 am</span>
+                                </div>
+                                <div class="event-sub-middle">
+                                    <p>Botony</p>
+                                    <p>Lorem ipsum dolor sit</p>
+                                </div>
+                            </div>
+                            <div class="event-timings">
+                                <span>09:00 - 10:00 am</span>
+                            </div>
+                        </div>
+                        <div class="events-container">
+                            <div class="events-left-congregate">
+                                <div class="event-time-left">
+                                    <span>10:00 am</span>
+                                </div>
+                                <div class="event-sub-middle">
+                                    <p>Botony</p>
+                                    <p>Lorem ipsum dolor sit</p>
+                                </div>
+                            </div>
+                            <div class="event-timings">
+                                <span>10:00 - 11:00 am</span>
+                            </div>
+                        </div>
+
+                        <div class="month-heading">
+                            <p>10 Jan</p>
+                            <span><i class="fa-solid fa-ellipsis"></i></span>
+                        </div>
+                        <div class="events-container">
+                            <div class="events-left-congregate">
+                                <div class="event-time-left">
+                                    <span>08:00 am</span>
+                                </div>
+                                <div class="event-sub-middle">
+                                    <p>Botony</p>
+                                    <p>Lorem ipsum dolor sit</p>
+                                </div>
+                            </div>
+                            <div class="event-timings">
+                                <span>08:00 - 09:00 am</span>
+                            </div>
+                        </div>
+                        <div class="events-container">
+                            <div class="events-left-congregate">
+                                <div class="event-time-left">
+                                    <span>09:00 am</span>
+                                </div>
+                                <div class="event-sub-middle">
+                                    <p>Botony</p>
+                                    <p>Lorem ipsum dolor sit</p>
+                                </div>
+                            </div>
+                            <div class="event-timings">
+                                <span>09:00 - 10:00 am</span>
+                            </div>
+                        </div>
+                        <div class="events-container">
+                            <div class="events-left-congregate">
+                                <div class="event-time-left">
+                                    <span>10:00 am</span>
+                                </div>
+                                <div class="event-sub-middle">
+                                    <p>Botony</p>
+                                    <p>Lorem ipsum dolor sit</p>
+                                </div>
+                            </div>
+                            <div class="event-timings">
+                                <span>10:00 - 11:00 am</span>
+                            </div>
+                        </div>
+                        <div class="month-heading">
+                            <p>10 Jan</p>
+                            <span><i class="fa-solid fa-ellipsis"></i></span>
+                        </div>
+                        <div class="events-container">
+                            <div class="events-left-congregate">
+                                <div class="event-time-left">
+                                    <span>08:00 am</span>
+                                </div>
+                                <div class="event-sub-middle">
+                                    <p>Botony</p>
+                                    <p>Lorem ipsum dolor sit</p>
+                                </div>
+                            </div>
+                            <div class="event-timings">
+                                <span>08:00 - 09:00 am</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <footer id="footer">
+                <div class="footer-container">
+                    <p>COPYRIGHT © 2022 DREAMGUYS.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <!--  -->
+</body>
+
+</html>
