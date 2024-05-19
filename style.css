@@ -23,6 +23,17 @@ ul li {
 	list-style: none;
 }
 
+.heading-right .dots {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.student-gi-heading .heading-right .view-all {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
 .backup-img {
 	display: none;
 }
@@ -1139,5 +1150,10 @@ p.span-grid-2-profession {
 	}
 	.student-gi-heading .heading-left h4 {
 		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 350px) {
+	.student-gi-3-content-container .dates-left::after {
+		height: 170px;
 	}
 }
